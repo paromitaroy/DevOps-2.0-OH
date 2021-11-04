@@ -35,7 +35,7 @@ jobs:
       run: dotnet build --no-restore apis/poi/web/*.csproj
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal #apis/poi/tests/UnitTests
+      run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests
       
       #### THIS IS OPTIONAL BUT GOOD TO HAVE, CREATE AN ISSUE IF THE JOB FAILS ####
       
