@@ -37,6 +37,8 @@ jobs:
       
       - name: Use Node.js 10.X
         uses: actions/setup-node@v2.4.1
+        
+      - run: npm install 
 
       - run: npm ci
       
