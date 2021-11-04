@@ -12,8 +12,14 @@ on:
 
 jobs:
 
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: apis/trips    
+
+    
     steps:
     - uses: actions/checkout@v2
 
