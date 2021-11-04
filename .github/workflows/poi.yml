@@ -26,7 +26,7 @@ jobs:
         dotnet-version: 5.0.x
         
     - name: Install Dependencies 
-      run: dotnet restore /apis/poi/web/*.csproj
+      run: dotnet restore apis/poi/web/*.csproj
       
 #     - name: Restore dependencies
 #       run: dotnet restore
