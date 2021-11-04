@@ -5,12 +5,12 @@ name: User-Java CI/CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths: 
       - apis/user-java/**  
       - .github/workflows/user-java.yml
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths: 
       - apis/user-java/**
       - .github/workflows/user-java.yml
