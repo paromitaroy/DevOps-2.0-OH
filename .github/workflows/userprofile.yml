@@ -29,8 +29,6 @@ jobs:
         shell: bash
         working-directory: apis/userprofile    
 
-    
-
     steps:
 
       - uses: actions/checkout@v2
