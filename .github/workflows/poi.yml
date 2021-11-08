@@ -75,12 +75,12 @@ jobs:
     # - name: Docker login     
     # run: docker login $registry -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.GITHUB_TOKEN }} 
  
-  #  - run: |
-    #    docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
-     #   docker push ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
+    - run: |
+        docker build . -t  $login_server/$repository:${{ github.sha }}
+        docker push $login_server/$repository:${{ github.sha }}
         
-    - name: Docker Build 
-      run: docker build -t $login_server/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
+  #  - name: Docker Build 
+   #   run: docker build -t . $login_server/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
 
       
   
