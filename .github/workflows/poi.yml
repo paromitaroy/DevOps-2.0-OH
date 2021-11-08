@@ -13,6 +13,7 @@ on:
 env: 
   poi_path: apis/poi/**
   repository: devopsoh/api-poi
+  login_server: openhackproyacr.azurecr.io
   docker_path: apis/poi/web/**
     
 jobs:
@@ -79,7 +80,7 @@ jobs:
      #   docker push ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
         
     - name: Docker Build 
-      run: docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
+      run: docker build -t $login_server/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
 
       
   
