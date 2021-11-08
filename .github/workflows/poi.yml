@@ -12,6 +12,8 @@ on:
 
 env: 
   poi_path: apis/poi/**
+  repository: devopsoh/api-poi
+  docker_path: apis/poi/web
     
 jobs:
   build-test:
@@ -67,7 +69,17 @@ jobs:
         username:  ${{ secrets.ACR_USER }}
         password: ${{ secrets.ACR_PASSWORD }}
         login-server: ${{ secrets.ACR_LOGIN_SERVER }}
-      
-     
+    
+    ## Option ##
+    # - name: Docker login     
+    # run: docker login $registry -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.GITHUB_TOKEN }} 
+ 
+    - run: |
+        docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
+        docker push ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
+        
+    #- name: Docker Build 
+    #  run: docker build -t $registry/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
+
       
   
