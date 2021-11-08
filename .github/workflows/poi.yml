@@ -75,7 +75,7 @@ jobs:
     # run: docker login $registry -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.GITHUB_TOKEN }} 
  
     - run: |
-        docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
+        docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
         docker push ${{ secrets.ACR_LOGIN_SERVER }}/$repository:${{ github.sha }}
         
     #- name: Docker Build 
