@@ -3,12 +3,12 @@ name: POI CI/CD
 on:
  # workflow_dispatch: 
   push:
-    branches: [ pr/dev ]
+    branches: [ main ]
     paths: 
       - apis/poi/**
       - .github/workflows/poi.yml
   pull_request:
-    branches: [ pr/dev ]
+    branches: [ main ]
 
 env: 
   poi_path: apis/poi/**
