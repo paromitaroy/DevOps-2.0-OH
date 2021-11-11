@@ -43,7 +43,7 @@ jobs:
       
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests /p:CollectCoverage=true /p:CoverletOutput=lcov/ /p:CoverletOutputFormat=lcov
+      run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
     
     
     - name: Coveralls
