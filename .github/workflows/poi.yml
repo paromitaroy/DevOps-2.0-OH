@@ -45,8 +45,8 @@ jobs:
       run: dotnet build --configuration Release apis/poi/tests/UnitTests/UnitTests.csproj
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-      working-directory: ./apis/poi/tests/UnitTests
+      run: dotnet test --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+      working-directory: apis/poi/tests/UnitTests
     
     - name: Coveralls
       uses: coverallsapp/github-action@1.1.3
