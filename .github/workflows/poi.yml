@@ -34,8 +34,8 @@ jobs:
 #     - name: Restore dependencies
 #       run: dotnet restore
       
-    - name: Build
-      run: dotnet build --no-restore apis/poi/web/*.csproj
+#     - name: Build
+#       run: dotnet build --no-restore apis/poi/web/*.csproj
       
     - name: Add code coverage tool
       working-directory: apis/poi/tests/UnitTests
