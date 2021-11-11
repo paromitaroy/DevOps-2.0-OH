@@ -38,11 +38,12 @@ jobs:
       run: dotnet build --no-restore apis/poi/web/*.csproj
       
     - name: Add code coverage tool
+      working-directory: apis/poi/tests/UnitTests
       run: dotnet add package coverlet.msbuild
 
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests
+      run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests /p:CollectCoverage=true /p:CoverletOutput=lcov/ /p:CoverletOutputFormat=lcov
     
     
     - name: Coveralls
