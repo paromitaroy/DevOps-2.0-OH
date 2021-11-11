@@ -41,10 +41,11 @@ jobs:
     - name: Build
       run: dotnet build --no-restore apis/poi/web/*.csproj
       
+    - name: .NET Build Unit Tests
+      run: dotnet build --configuration Release apis/poi/tests/UnitTests/UnitTests.csproj
 
     - name: Test
       run: dotnet test --no-build --verbosity normal apis/poi/tests/UnitTests /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-    
     
     - name: Coveralls
       uses: coverallsapp/github-action@1.1.3
