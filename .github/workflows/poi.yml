@@ -26,7 +26,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 3.1.202
   
     - name: Add code coverage tool
       working-directory: apis/poi/tests/UnitTests
